@@ -23,6 +23,7 @@ init();
 !!!Requires!!!
 
 You must have these plugins installed to use this plugin.
+
 https://github.com/Stuyk/rebar-chat      //because of the commands
 
 !!!Features!!!
