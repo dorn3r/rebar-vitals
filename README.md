@@ -24,7 +24,7 @@ If you want add clientside, with alt.setInterval
     const food = alt.getLocalMeta('food');
     const water = alt.getLocalMeta('water')
     if (typeof food === 'number' && food <= 10 || typeof water === 'number' && water <= 10) {
-        native.disableControlAction(0, 21, true);
+        native.disableControlAction(0, 21, true); //Disable Sprint
     }
 ```
 
