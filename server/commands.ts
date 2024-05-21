@@ -6,7 +6,25 @@ import { useRebar } from '@Server/index.js';
 
 const Rebar = useRebar();
 const messenger = Rebar.messenger.useMessenger();
-const getter = Rebar.get.usePlayerGetter()
+
+function byID(id: number | string): alt.Player {
+        
+        if (typeof id === 'string') {
+            id = parseInt(id);
+        }
+
+        return alt.Player.all.find((target) => {
+            if (!target || !target.valid) {
+                return false;
+            }
+    
+            if (target.id !== id) {
+                return false;
+            }
+    
+            return true;
+        });
+    }
 
 messenger.commands.register({
     name: '/setfood',
@@ -21,7 +39,7 @@ messenger.commands.register({
                 return;
             }
 
-            const target = getter.byID(id)
+            const target = byID(id)
 
             if(!target) {
                 messenger.message.send(player, { type: 'warning', content: 'No players with id.' });
@@ -49,7 +67,7 @@ messenger.commands.register({
                 return;
             }
 
-            const target = getter.byID(id)
+            const target = byID(id)
 
             if(!target) {
                 messenger.message.send(player, { type: 'warning', content: 'No players with id.' });
@@ -77,7 +95,7 @@ messenger.commands.register({
                 return;
             }
 
-            const target = getter.byID(id)
+            const target = byID(id)
 
             if(!target) {
                 messenger.message.send(player, { type: 'warning', content: 'No players with id.' });
