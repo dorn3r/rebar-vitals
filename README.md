@@ -21,11 +21,10 @@ init();
 
 If you want add clientside, with alt.setInterval
 ```ts
-if (
-        alt.Player.local.meta.food <= 10 ||
-        alt.Player.local.meta.water <= 10
-    ) {
-        native.disableControlAction(0, 21, true); //disable sprint???
+    const food = alt.getLocalMeta('food');
+    const water = alt.getLocalMeta('water')
+    if (typeof food === 'number' && food <= 10 || typeof water === 'number' && water <= 10) {
+        native.disableControlAction(0, 21, true);
     }
 ```
 
