@@ -28,6 +28,6 @@ https://github.com/Stuyk/rebar-chat      //because of the commands
 
 !!!Features!!!
 
-/setfood id amount
-/setwater id amount
-/setneeds id amount
+- /setfood id amount
+- /setwater id amount
+- /setneeds id amount
